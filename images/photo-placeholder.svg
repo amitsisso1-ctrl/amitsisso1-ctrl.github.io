@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <!-- PLACEHOLDER: gallery photo. Replace with your real photos (see README) -->
+  <rect width="400" height="500" fill="#e9e2d7"/>
+  <g fill="none" stroke="#b08d57" stroke-width="6" stroke-linejoin="round">
+    <rect x="130" y="200" width="140" height="96" rx="12"/>
+    <path d="M168 200l12-20h40l12 20"/>
+    <circle cx="200" cy="248" r="28"/>
+  </g>
+  <text x="200" y="340" font-family="sans-serif" font-size="20" fill="#8a7f70" text-anchor="middle">PHOTO</text>
+</svg>
