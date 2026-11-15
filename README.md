@@ -18,12 +18,10 @@ Live site: https://amitsisso1-ctrl.github.io
 Every place you need to change is marked in the HTML with the word **REPLACE**.
 Search for it (Ctrl+F) in both `index.html` and `en/index.html`.
 
-### 1. Your photo or logo
-1. Copy your picture into the `images` folder (for example `images/amit.jpg`).
-2. In `index.html` change `images/profile-placeholder.svg` to `images/amit.jpg`.
-3. In `en/index.html` change `../images/profile-placeholder.svg` to `../images/amit.jpg`.
-
-Tip: a square picture works best (it is shown as a circle).
+### 1. Logo
+The logo at the top is `images/logo.png` (a trimmed copy of `my logo.png`).
+To change it, replace `images/logo.png` with a new file of the same name.
+The site colors (black & white) match the logo — they are at the top of `style.css`.
 
 ### 2. Your WhatsApp number
 Already set to `https://wa.me/972547833704`. To change it, edit the WhatsApp link in **both** pages:
