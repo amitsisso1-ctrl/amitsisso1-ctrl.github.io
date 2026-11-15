@@ -63,7 +63,7 @@ h2::after {
 }
 
 section {
-  padding: 56px 16px;
+  padding: 40px 16px;          /* phones: tighter spacing */
   max-width: var(--max);
   margin: 0 auto;
 }
@@ -250,6 +250,8 @@ footer {
    Bigger screens (tablets & computers)
    ========================================================== */
 @media (min-width: 700px) {
+  section { padding-top: 56px; padding-bottom: 56px; }
+
   .logo { width: 260px; }
 
   .events ul { grid-template-columns: repeat(3, 1fr); }
