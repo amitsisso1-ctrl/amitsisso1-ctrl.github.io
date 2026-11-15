@@ -40,7 +40,7 @@ Tip: make photos smaller before uploading (about 1600px wide, under 500 KB each)
 Portrait photos (tall, 4:5) look best in the slider.
 
 ### 4. Text
-The "About me" text is a draft — edit it in both pages (look for **EDIT**).
+The "About me" section shows a quote by David Alan Harvey. To change it, edit the `<blockquote>` in both pages.
 
 ## See it on your computer
 Double-click `index.html` to open it in your browser.
