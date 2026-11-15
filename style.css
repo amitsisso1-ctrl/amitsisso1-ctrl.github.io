@@ -128,13 +128,14 @@ section {
 }
 
 .quote cite {
+  display: block;          /* own line, centered under the quote */
+  text-align: center;
+  margin-top: 16px;
   color: var(--gold);
   font-style: normal;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
 }
-
-.quote cite::before { content: "— "; }
 
 /* ---- Events I shoot ---- */
 .events ul {
