@@ -1,0 +1,234 @@
+/* ==========================================================
+   Amit Sisso – Event Photography
+   One design file shared by the Hebrew and English pages.
+   ========================================================== */
+
+/* ---- Colors & sizes (change them here, they update everywhere) ---- */
+:root {
+  --bg: #faf8f5;          /* soft off-white background */
+  --bg-soft: #f1ece4;     /* slightly darker cards */
+  --text: #2b2b2b;        /* main text */
+  --muted: #6f6a64;       /* softer text */
+  --gold: #b08d57;        /* accent color */
+  --whatsapp: #25d366;
+  --radius: 14px;
+  --max: 960px;           /* max page width on big screens */
+}
+
+/* ---- Basics ---- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Heebo", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2 {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* small gold line under section titles */
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0.5em auto 0;
+}
+
+section {
+  padding: 56px 16px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* ---- Language tab (always top right) ---- */
+.lang-switch {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  padding: 6px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  background: var(--bg);
+}
+
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* ---- Hero: photo/logo + name ---- */
+.hero {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero .profile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 24px;
+  border: 3px solid var(--gold);
+  padding: 4px;
+  background: var(--bg);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.15em;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---- About ---- */
+.about p {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---- Events I shoot ---- */
+.events ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 per row on phones */
+  gap: 12px;
+}
+
+.events li {
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  padding: 20px 12px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ---- Contact buttons ---- */
+.contact { text-align: center; }
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;     /* one under the other on phones */
+  gap: 12px;
+  max-width: 360px;
+  margin: 24px auto 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;           /* big and easy to tap */
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--text);
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  border-color: var(--whatsapp);
+  color: #fff;
+}
+
+/* ---- Photo slider ---- */
+.gallery { max-width: none; padding-left: 0; padding-right: 0; }
+
+.slider {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;                 /* scroll sideways */
+  scroll-snap-type: x mandatory;    /* stop neatly on each photo */
+  padding: 24px 16px 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+
+.slider img {
+  flex: 0 0 82%;                    /* phone: one big photo + a peek of the next */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  scroll-snap-align: center;
+  background: var(--bg-soft);
+}
+
+.swipe-hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--bg-soft);
+}
+
+/* ==========================================================
+   Bigger screens (tablets & computers)
+   ========================================================== */
+@media (min-width: 700px) {
+  .hero h1 { font-size: 3.4rem; }
+  .hero .profile { width: 200px; height: 200px; }
+
+  .events ul { grid-template-columns: repeat(3, 1fr); }
+
+  .contact-buttons {
+    flex-direction: row;
+    max-width: none;
+    justify-content: center;
+  }
+  .btn { flex: 0 1 220px; }
+
+  .slider img { flex-basis: 340px; }
+}
