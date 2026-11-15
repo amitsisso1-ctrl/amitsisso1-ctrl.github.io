@@ -1,18 +1,19 @@
 /* ==========================================================
    Amit Sisso – Event Photography
    One design file shared by the Hebrew and English pages.
+   Colors match the logo: black & white, thin lines.
    ========================================================== */
 
 /* ---- Colors & sizes (change them here, they update everywhere) ---- */
 :root {
-  --bg: #faf8f5;          /* soft off-white background */
-  --bg-soft: #f1ece4;     /* slightly darker cards */
-  --text: #2b2b2b;        /* main text */
-  --muted: #6f6a64;       /* softer text */
-  --gold: #b08d57;        /* accent color */
-  --whatsapp: #25d366;
-  --radius: 14px;
+  --bg: #ffffff;          /* white – same as the logo background */
+  --bg-soft: #f6f5f3;     /* very light warm gray (cards, photo boxes) */
+  --text: #1a1a1a;        /* near-black, like the logo lines */
+  --muted: #6e6e6e;       /* soft gray text */
+  --line: #e4e2df;        /* thin divider lines */
+  --radius: 4px;          /* small corners = cleaner, more professional */
   --max: 960px;           /* max page width on big screens */
+  --serif: "Cormorant Garamond", "Frank Ruhl Libre", Georgia, serif;
 }
 
 /* ---- Basics ---- */
@@ -25,6 +26,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Heebo", system-ui, sans-serif;
+  font-weight: 300;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -32,25 +34,32 @@ body {
 img { max-width: 100%; display: block; }
 
 h1, h2 {
-  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-family: var(--serif);
   font-weight: 500;
   line-height: 1.2;
   margin: 0 0 0.5em;
 }
 
+/* Section titles: spaced letters, like "AMIT SISSO" in the logo */
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-align: center;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-/* small gold line under section titles */
+/* Hebrew letters look broken when spaced wide, so less spacing */
+h2:lang(he),
+.quote:lang(he) cite { letter-spacing: 0.04em; }
+
+/* thin black line under section titles */
 h2::after {
   content: "";
   display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--gold);
-  margin: 0.5em auto 0;
+  width: 36px;
+  height: 1px;
+  background: var(--text);
+  margin: 0.7em auto 0;
 }
 
 section {
@@ -66,53 +75,38 @@ section {
   right: 16px;
   z-index: 10;
   padding: 6px 14px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--text);
   border-radius: 999px;
-  color: var(--gold);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-decoration: none;
   background: var(--bg);
+  transition: background 0.2s, color 0.2s;
 }
 
 .lang-switch:hover,
 .lang-switch:focus-visible {
-  background: var(--gold);
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
 }
 
-/* ---- Hero: photo/logo + name ---- */
+/* ---- Hero: logo ---- */
 .hero {
   text-align: center;
-  padding-top: 80px;
+  padding: 72px 16px 8px;
 }
 
-.hero .profile {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 24px;
-  border: 3px solid var(--gold);
-  padding: 4px;
-  background: var(--bg);
+.hero h1 { margin: 0; }
+
+.logo {
+  width: 220px;
+  height: auto;
+  margin: 0 auto;
 }
 
-.hero h1 {
-  font-size: 2.6rem;
-  margin-bottom: 0.15em;
-}
-
-.tagline {
-  margin: 0;
-  color: var(--gold);
-  font-size: 1rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* ---- About: quote ---- */
+/* ---- Quote ---- */
 .quote {
   max-width: 620px;
   margin: 0 auto;
@@ -121,23 +115,27 @@ section {
 
 .quote p {
   margin: 0 0 12px;
-  font-family: "Frank Ruhl Libre", Georgia, serif;
-  font-size: 1.5rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* Hebrew has no real italic, so keep it upright */
-.quote:lang(he) p { font-style: normal; }
+.quote:lang(he) p {
+  font-style: normal;
+  font-size: 1.45rem;
+}
 
 .quote cite {
   display: block;          /* own line, centered under the quote */
   text-align: center;
   margin-top: 16px;
-  color: var(--gold);
+  color: var(--muted);
   font-style: normal;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 /* ---- Events I shoot ---- */
@@ -151,11 +149,12 @@ section {
 }
 
 .events li {
-  background: var(--bg-soft);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 20px 12px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
 /* ---- Contact buttons ---- */
@@ -176,23 +175,34 @@ section {
   gap: 10px;
   min-height: 54px;           /* big and easy to tap */
   padding: 12px 20px;
-  border-radius: 999px;
-  font-size: 1.05rem;
-  font-weight: 500;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-decoration: none;
   color: var(--text);
   border: 1px solid var(--text);
-  transition: transform 0.15s, opacity 0.15s;
+  background: var(--bg);
+  transition: background 0.2s, color 0.2s;
 }
 
-.btn:hover { transform: translateY(-2px); }
+.btn:hover,
+.btn:focus-visible {
+  background: var(--text);
+  color: var(--bg);
+}
 
-.btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+.btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
+/* WhatsApp = main button: solid black */
 .btn-whatsapp {
-  background: var(--whatsapp);
-  border-color: var(--whatsapp);
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus-visible {
+  background: #3a3a3a;
 }
 
 /* ---- Photo slider ---- */
@@ -206,7 +216,7 @@ section {
   padding: 24px 16px 12px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: var(--gold) transparent;
+  scrollbar-color: var(--muted) transparent;
 }
 
 .slider img {
@@ -221,7 +231,8 @@ section {
 .swipe-hint {
   text-align: center;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
   margin: 0;
 }
 
@@ -230,16 +241,16 @@ footer {
   text-align: center;
   padding: 32px 16px;
   color: var(--muted);
-  font-size: 0.85rem;
-  border-top: 1px solid var(--bg-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--line);
 }
 
 /* ==========================================================
    Bigger screens (tablets & computers)
    ========================================================== */
 @media (min-width: 700px) {
-  .hero h1 { font-size: 3.4rem; }
-  .hero .profile { width: 200px; height: 200px; }
+  .logo { width: 260px; }
 
   .events ul { grid-template-columns: repeat(3, 1fr); }
 
