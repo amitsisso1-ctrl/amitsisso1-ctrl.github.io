@@ -112,13 +112,29 @@ section {
   text-transform: uppercase;
 }
 
-/* ---- About ---- */
-.about p {
+/* ---- About: quote ---- */
+.quote {
   max-width: 620px;
   margin: 0 auto;
   text-align: center;
-  color: var(--muted);
 }
+
+.quote p {
+  margin: 0 0 12px;
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.quote cite {
+  color: var(--gold);
+  font-style: normal;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.quote cite::before { content: "— "; }
 
 /* ---- Events I shoot ---- */
 .events ul {
