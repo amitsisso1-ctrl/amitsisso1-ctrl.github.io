@@ -19,7 +19,7 @@ Every place you need to change is marked in the HTML with the word **REPLACE**.
 Search for it (Ctrl+F) in both `index.html` and `en/index.html`.
 
 ### 1. Logo
-The logo at the top is `images/logo.png` (a trimmed copy of `my logo.png`).
+The logo at the top is `images/logo.png` (a trimmed copy of `newest logo.png`).
 To change it, replace `images/logo.png` with a new file of the same name.
 The site colors (black & white) match the logo — they are at the top of `style.css`.
 
