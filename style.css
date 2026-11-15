@@ -11,6 +11,8 @@
   --text: #1a1a1a;        /* near-black, like the logo lines */
   --muted: #6e6e6e;       /* soft gray text */
   --line: #e4e2df;        /* thin divider lines */
+  --whatsapp: #25d366;    /* WhatsApp green */
+  --whatsapp-dark: #1ebe5b;
   --radius: 4px;          /* small corners = cleaner, more professional */
   --max: 960px;           /* max page width on big screens */
   --serif: "Cormorant Garamond", "Frank Ruhl Libre", Georgia, serif;
@@ -194,16 +196,22 @@ section {
 
 .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-/* WhatsApp = main button: solid black */
+/* WhatsApp = main button: WhatsApp green */
 .btn-whatsapp {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--whatsapp);
+  border-color: var(--whatsapp);
+  color: #fff;
+  font-weight: 500;
 }
 
 .btn-whatsapp:hover,
 .btn-whatsapp:focus-visible {
-  background: #3a3a3a;
+  background: var(--whatsapp-dark);
+  border-color: var(--whatsapp-dark);
+  color: #fff;
 }
+
+.btn-whatsapp svg { width: 22px; height: 22px; }
 
 /* ---- Photo slider ---- */
 .gallery { max-width: none; padding-left: 0; padding-right: 0; }
