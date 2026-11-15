@@ -127,6 +127,9 @@ section {
   line-height: 1.5;
 }
 
+/* Hebrew has no real italic, so keep it upright */
+.quote:lang(he) p { font-style: normal; }
+
 .quote cite {
   display: block;          /* own line, centered under the quote */
   text-align: center;
