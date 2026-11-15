@@ -26,7 +26,7 @@ Search for it (Ctrl+F) in both `index.html` and `en/index.html`.
 Tip: a square picture works best (it is shown as a circle).
 
 ### 2. Your WhatsApp number
-In **both** pages, change `972XXXXXXXXX` to your number:
+Already set to `https://wa.me/972547833704`. To change it, edit the WhatsApp link in **both** pages:
 start with `972`, then your number **without the first 0**.
 Example: `050-1234567` → `https://wa.me/972501234567`
 
